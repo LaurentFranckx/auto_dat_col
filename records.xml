@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<records>
+    <record id="1">
+        <title>  Das lied von der Erde  </title>
+        <composer> Mahler </composer>
+        <conductor> Herreweghe </conductor>  
+    </record>
+    <record id="2">
+        <title>  Mattheus Passion  </title>
+        <composer> Bach </composer>
+        <conductor> Kuycken </conductor>  
+    </record>
+    <record id="3">
+        <title>  Wintereise  </title>
+        <composer> Shubert </composer>
+        <conductor> Levine </conductor>  
+    </record>
+</records>
