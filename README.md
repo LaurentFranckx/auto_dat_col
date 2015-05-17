@@ -1,1 +1,1 @@
-auto_dat_col
+This repo contains my solutions to the exercises in "Automated data collectio with R" by Munzert et al. 

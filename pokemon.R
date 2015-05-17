@@ -85,7 +85,7 @@ res7 <- dbGetQuery(con,sq7)
 sq8 <- "SELECT * FROM [statsview], 
 (SELECT MAX(base_stat) AS 'Highest_defense' FROM pokemon_stats WHERE stat_id = 3 ) maxresult
 INNER JOIN pokeview ON [statsview].pokemon_id = [pokeview].species_id WHERE base_stat = maxresult.Highest_defense " 
-res7 <- dbGetQuery(con,sq8)
+res8 <- dbGetQuery(con,sq8)
 
 
 
