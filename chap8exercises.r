@@ -28,6 +28,8 @@ name[reverse_names_pos] <- reverse_names_correct
 
 test_string1 <- c("afhff2566","eedf25446eeer","ezzff4557$")
 str_detect(test_string1,"[0-9]+\\$")
+str_detect(test_string1,"[[:digit:]]{1,}[$]")
+
 
 test_string2 <- c("ag66","eed", " ed ", "ezzfffgfg")
 str_detect(test_string2,"\\b[a-z]{1,4}\\b")
@@ -62,6 +64,24 @@ str_extract("<(112)>dff1225</44555</(112)","<(.+?)>.+?</\\1")
 str_extract("<(112)>dff1225</44555</aahdddcg(112)","<(.+?)>.+?</\\1")
 str_extract("<(112)>dff1225</44555</aahdddcg(112)/(112)","<(.+?)>.+?</\\1")
 str_extract("<(112)>dff1225</44555</(112)/(112)","<(.+?)>.+?</\\1")
+
+mailadres <- "chunkylover53[at]ao[dot]com"
+mailadres <- str_replace(mailadres,"\\[at\\]","@")
+mailadres <- str_replace(mailadres,"\\[dot\\]","\\.")
+
+str_extract_all(mailadres, "[[:digit:]]")
+str_extract_all(mailadres, "\\d")
+
+break_news <- "<title>+++BREAKING NEWS++++</title>"
+str_extract(break_news, "<.+?>")
+
+
+math_string <- "(5-3)^2 = 5^2 - 2*5*3 + 3^2 conforms to the the binomial theorem"
+str_extract_all(math_string,"[^0-9=+*()]+")
+#str_extract_all(math_string,"[0-9=+-*()]+")
+str_extract_all(math_string,"[0-9=+*()^-]+")
+str_extract(math_string,"[^a-zA-Z]+")
+str_extract(math_string,"[0-9=+*()^ -]+")
 
 
 
