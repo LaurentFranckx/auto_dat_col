@@ -28,6 +28,40 @@ MP_sirs <- MP_table[sirs, ]
 dplyr::group_by(MP_sirs, Party)
 #MP_sirs %>% group_by(Party) %>% summarise()
 dplyr::count(MP_sirs, Party)
+
+
+list_of_cap_url <- "https://en.wikipedia.org/wiki/List_of_national_capitals_by_population"
+list_of_cap_source <- readLines(list_of_cap_url, encoding = "UTF-8")
+list_of_cap_parsed <- htmlParse(list_of_cap_source, encoding = "UTF-8")
+
+#xpathSApply(list_of_cap_parsed, "//thead/tr/th", fun= xmlAttrs)
+
+xpathSApply(list_of_cap_parsed, "//table", fun= xmlAttrs)
+
+#xpathSApply(list_of_cap_parsed, "//table[@class='wikitable sortable jquery-tablesorter']")
+table_with_caps <- xpathSApply(list_of_cap_parsed, "//table[@class='wikitable sortable']")
+#table_with_capbod <- xpathSApply(list_of_cap_parsed, "//table[@class='wikitable sortable']/descendant::tbody")
+#table_with_capbod <- xpathSApply(list_of_cap_parsed, "//table[@class='wikitable sortable']/tbody")
+table_with_country <- xpathSApply(list_of_cap_parsed, "//table[@class='wikitable sortable']")
+
+table_with_capbod <- xpathSApply(list_of_cap_parsed, "//table[@class='wikitable sortable']/descendant::tr/td[position()=3]/b")
+
+
+
+#getHTMLLinks(list_of_cap_parsed, xpQuery = "//table[@class='wikitable sortable jquery-tablesorter']/descendant::tbody/tr/td/b/@href")
+#╠getHTMLLinks(list_of_cap_parsed, xpQuery = "//table[@class='wikitable sortable']/descendant::tbody/tr/td/b/@href")
+cap_links <- getHTMLLinks(list_of_cap_parsed, xpQuery = "//table[@class='wikitable sortable']/descendant::tr/td[position()=3]/b/a/@href")
+
+
+
+
+
+
+
+
+
+
+
              
              
              
