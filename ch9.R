@@ -1,6 +1,7 @@
 ### --------------------------------------------------------------
 ### AUTOMATED DATA COLLECTION WITH R
 ### SIMON MUNZERT, CHRISTIAN RUBBA, PETER MEISSNER, DOMINIC NYHUIS
+
 ###
 ### CODE CHAPTER 9: SCRAPING THE WEB
 ### --------------------------------------------------------------

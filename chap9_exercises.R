@@ -53,11 +53,23 @@ table_with_capbod <- xpathSApply(list_of_cap_parsed, "//table[@class='wikitable 
 cap_links <- getHTMLLinks(list_of_cap_parsed, xpQuery = "//table[@class='wikitable sortable']/descendant::tr/td[position()=3]/b/a/@href")
 
 
+library(httr)
+
+#ny_times_best_sellers <- oauth_endpoint(authorize = )
 
 
+ny_key <- "e3b0514f5133f21156df3809c962009d:15:69577313"
+ny_date <- "2010-10-01"
+ny_list <- "hardcover-fiction"
+#response <- ".json"
+response <- ".xml"
+#ny_best_url <- paste("http://api.nytimes.com/svc/books/v3/lists/", ny_date, "/", response, "&", ny_list , sep ="")
+ny_best_url <- paste("http://api.nytimes.com/svc/books/v3/lists/", ny_date, "/",  ny_list ,  response, "&api-key=", ny_key ,  sep ="")
+res <- getURL(ny_best_url)
 
+http://api.nytimes.com/svc/books/v2/lists/2010-10-01/trade-fiction-paperback.xml
 
-
+http://api.nytimes.com/svc/books/{version}/lists/[date/]{list-name}[.response_format]?[optional-param1=value1]&[...]&api-key={your-API-key}
 
 
 
